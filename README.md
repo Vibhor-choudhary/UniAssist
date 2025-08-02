@@ -1,30 +1,71 @@
-# Flutter
+# UniAssist
 
-A modern Flutter-based mobile application utilizing the latest mobile development technologies and tools for building responsive cross-platform applications.
+> An open-source, AI-powered student productivity and campus assistant app—adaptable to any academic environment.  
+> All-in-one dashboard for assignments, attendance, notifications, schedules, and more.
 
-## 📋 Prerequisites
+![UniAssist Demo](assets/demo.gif)  
+<!-- Replace with your actual demo GIF or screenshot -->
 
+## ✨ Features
+
+| Feature               | Description                                                                                             |
+|-----------------------|---------------------------------------------------------------------------------------------------------|
+| Unified Dashboard     | See all academic updates, notifications, assignments, and schedules in one place.                      |
+| Smart Notifications   | AI-powered, priority-sorted alerts ensure you never miss what matters.                                 |
+| Attendance Tracker    | Real-time, visual analytics and threshold monitoring tailored to academic policies (e.g., 75% alerts).  |
+| Assignment & Calendar | Instantly view, track, and get reminders for deadlines and academic events.                            |
+| Customizable Widgets  | Drag-and-drop dashboard: personalize your experience to your needs.                                    |
+| Privacy-First         | No data leaves your device without consent. Strong open-source security best practices applied.         |
+| 100% Free & Open Source | Built using Flutter, Firebase/Supabase, OpenAI API (free tier), and open standards.                  |
+| Platform-Agnostic     | Designed for effortless adaptation to any school, college, or university setup globally.                |
+
+> **Demo Preview:** [UniAssist Live](https://preview.builtwithrocket.new/campus-copilot-7wx0o81)  
+>  
+> **Source Code:** [https://github.com/Vibhor-choudhary/UniAssist.git](https://github.com/Vibhor-choudhary/UniAssist.git)
+
+## 🚀 Get Started
+
+### Requirements
 - Flutter SDK (^3.29.2)
 - Dart SDK
 - Android Studio / VS Code with Flutter extensions
 - Android SDK / Xcode (for iOS development)
+- Free Firebase or Supabase account for backend services
+- OpenAI API key (optional; free tier supported for AI features)
 
-## 🛠️ Installation
+### Installation Steps
 
-1. Install dependencies:
 ```bash
+git clone https://github.com/Vibhor-choudhary/UniAssist.git
+cd UniAssist
 flutter pub get
 ```
 
-2. Run the application:
+### Configuration
+
+- Copy `env.json.example` to `env.json` and configure your Firebase/Supabase and OpenAI keys.
+- Review database security rules in `/docs/deployment/security.md`.
+
+### Running Locally
+
 ```bash
 flutter run
+```
+
+### Building for Production
+
+```bash
+# For Android
+flutter build apk --release
+
+# For iOS
+flutter build ios --release
 ```
 
 ## 📁 Project Structure
 
 ```
-flutter_app/
+UniAssist/
 ├── android/            # Android-specific configuration
 ├── ios/                # iOS-specific configuration
 ├── lib/
@@ -41,66 +82,49 @@ flutter_app/
 └── README.md           # Project documentation
 ```
 
-## 🧩 Adding Routes
+## 📖 Documentation & Architecture
 
-To add new routes to the application, update the `lib/routes/app_routes.dart` file:
+- `/lib/presentation` - App screens like Dashboard, Notifications, Attendance  
+- `/lib/widgets` - Reusable UI elements  
+- `/lib/core` - API calls, data processing modules  
+- `/lib/models` - Data schemas and types  
+- `/docs` - Technical guides, architecture overviews, onboarding  
 
-```dart
-import 'package:flutter/material.dart';
-import 'package:package_name/presentation/home_screen/home_screen.dart';
+## 💡 Contributing
 
-class AppRoutes {
-  static const String initial = '/';
-  static const String home = '/home';
+We welcome all contributors!
 
-  static Map<String, WidgetBuilder> routes = {
-    initial: (context) => const SplashScreen(),
-    home: (context) => const HomeScreen(),
-    // Add more routes as needed
-  }
-}
-```
+- See [`CONTRIBUTING.md`](CONTRIBUTING.md) for guidelines.
+- Check out good first issues [here](https://github.com/Vibhor-choudhary/UniAssist/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+- Join discussions and cooperative efforts via [GitHub Discussions](https://github.com/Vibhor-choudhary/UniAssist/discussions).
 
-## 🎨 Theming
+## 🗺️ Roadmap
 
-This project includes a comprehensive theming system with both light and dark themes:
+- [x] Unified Dashboard  
+- [x] Attendance, Assignments, Calendar Widgets  
+- [x] AI-powered Notifications  
+- [ ] Multi-language Support  
+- [ ] Dark Mode & Accessibility    
+- [ ] OAuth Login Integration  
+- [ ] Peer Study Buddy and Collaboration Features  
+- [ ] One-click Deploy/Docker Setup
 
-```dart
-// Access the current theme
-ThemeData theme = Theme.of(context);
+See [GitHub Projects](https://github.com/Vibhor-choudhary/UniAssist/projects) for the full roadmap.
 
-// Use theme colors
-Color primaryColor = theme.colorScheme.primary;
-```
+## 🔎 Feedback & Support
 
-The theme configuration includes:
-- Color schemes for light and dark modes
-- Typography styles
-- Button themes
-- Input decoration themes
-- Card and dialog themes
+- Report bugs or request features: [GitHub Issues](https://github.com/Vibhor-choudhary/UniAssist/issues)
+- General discussion & ideas: [GitHub Discussions](https://github.com/Vibhor-choudhary/UniAssist/discussions)
+- Beta testing and user feedback form: [Example Google Form](https://forms.gle/your-form) *(replace with actual form)*
 
-## 📱 Responsive Design
+## 📄 License
 
-The app is built with responsive design using the Sizer package:
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-```dart
-// Example of responsive sizing
-Container(
-  width: 50.w, // 50% of screen width
-  height: 20.h, // 20% of screen height
-  child: Text('Responsive Container'),
-)
-```
-## 📦 Deployment
+## 🤝 Acknowledgments
 
-Build the application for production:
+- Thanks to all contributors, open-source technologies, and hackathon mentors.
+- Special mentions: Flutter, Firebase, OpenAI, Supabase.
 
-```bash
-# For Android
-flutter build apk --release
-
-# For iOS
-flutter build ios --release
-```
+---
 
